@@ -1,0 +1,1468 @@
+{
+	"info": {
+		"_postman_id": "eb669c54-787b-4427-8834-a942024237b2",
+		"name": "Schedules",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7979057"
+	},
+	"item": [
+		{
+			"name": "get schedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://xuqg4pql26.execute-api.us-east-1.amazonaws.com/schedule/user7",
+					"protocol": "https",
+					"host": [
+						"xuqg4pql26",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"schedule",
+						"user7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/user1",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"user1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 17:55:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajZ29ilGIAMEcng="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Schedule fetched successfully\",\n    \"data\": {\n        \"friday\": [],\n        \"monday\": [\n            {\n                \"end\": \"17:00\",\n                \"start\": \"09:30\"\n            }\n        ],\n        \"sunday\": [],\n        \"tuesday\": [\n            {\n                \"end\": \"17:00\",\n                \"start\": \"13:00\"\n            }\n        ],\n        \"saturday\": [],\n        \"thursday\": [],\n        \"wednesday\": []\n    }\n}"
+				},
+				{
+					"name": "400 - Bad Request (No User ID)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 17:57:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajaH8gzFoAMEJiw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"User ID is required\"\n}"
+				},
+				{
+					"name": "404 - Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/user7",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"user7"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 17:58:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajaN_goeIAMEctg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Schedule not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get availability",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"timestamp\": \"2024-07-22T15:30:00\",\n  \"timezone\": \"Africa/Lagos\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xuqg4pql26.execute-api.us-east-1.amazonaws.com/schedule/availability/user7",
+					"protocol": "https",
+					"host": [
+						"xuqg4pql26",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"schedule",
+						"availability",
+						"user7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 - Bad Request (No User ID)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timestamp\": \"2024-07-16T15:30:00\",\n  \"timezone\": \"America/New_York\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/availability/",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"availability",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:00:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajajTgRrIAMEcXw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"User ID is required\"\n}"
+				},
+				{
+					"name": "200 - OK (offline)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timestamp\": \"2024-07-16T15:30:00\",\n  \"timezone\": \"America/New_York\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/availability/user2",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"availability",
+								"user2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:00:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajaobhBFoAMEJZQ="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"User availability checked successfully\",\n    \"data\": {\n        \"userId\": \"user2\",\n        \"availability\": \"offline\"\n    }\n}"
+				},
+				{
+					"name": "400 - Bad Request (Invalid timestamp)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timestamp\": \"abcd\",\n  \"timezone\": \"America/New_York\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/availability/user1",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"availability",
+								"user1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:14:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajcryi4TIAMEcZg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Valid timestamp is required\"\n}"
+				},
+				{
+					"name": "400 - Bad Request (Invalid Timezone)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timestamp\": \"2024-07-16T15:30:00\",\n  \"timezone\": \"aaa\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/availability/user1",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"availability",
+								"user1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:15:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajczPiSlIAMEJgw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Valid timezone is required\"\n}"
+				},
+				{
+					"name": "404 - Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"timestamp\": \"2024-07-22T15:30:00\",\n  \"timezone\": \"America/New_York\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule/availability/user7",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule",
+								"availability",
+								"user7"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:21:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajdryjMxoAMEJZQ="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"User not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "put schedule",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "user_id",
+						"value": "user7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"18:00\" }, { \"start\": \"10:30\", \"end\": \"18:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xuqg4pql26.execute-api.us-east-1.amazonaws.com/schedule",
+					"protocol": "https",
+					"host": [
+						"xuqg4pql26",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:24:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajeIXhiMoAMEJZQ="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Schedule updated successfully\",\n    \"data\": {\n        \"monday\": [\n            {\n                \"start\": \"09:30\",\n                \"end\": \"17:00\"\n            }\n        ],\n        \"tuesday\": [\n            {\n                \"start\": \"13:00\",\n                \"end\": \"17:00\"\n            }\n        ],\n        \"wednesday\": [],\n        \"thursday\": [],\n        \"friday\": [],\n        \"saturday\": [],\n        \"sunday\": []\n    }\n}"
+				},
+				{
+					"name": "400 - No Timezone",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:25:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajeQShAVoAMEckg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Timezone is required\"\n}"
+				},
+				{
+					"name": "400 - No Schedule",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:26:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajeXRjaLIAMEcRw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Schedule is required\"\n}"
+				},
+				{
+					"name": "400 - Invalid Start Date",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"18:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:26:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajec6iKcoAMEJlw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid time slot on monday: {\\\"start\\\":\\\"18:30\\\",\\\"end\\\":\\\"17:00\\\"}\"\n}"
+				},
+				{
+					"name": "400 - Invalid Day",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }],\n          \"ok\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:28:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajet_i2voAMEJaw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid format for tuesday\"\n}"
+				},
+				{
+					"name": "400 - Overlapping Timeslots",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }, { \"start\": \"10:30\", \"end\": \"18:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:29:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "aje5Bh-vIAMEcDQ="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Overlapping time slots on monday: {\\\"start\\\":\\\"09:30\\\",\\\"end\\\":\\\"17:00\\\"} and {\\\"start\\\":\\\"10:30\\\",\\\"end\\\":\\\"18:00\\\"}\"\n}"
+				},
+				{
+					"name": "400 - Invalid End Date",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"25:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:30:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfDIgbAIAMEcsg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid time slot on monday: {\\\"start\\\":\\\"09:30\\\",\\\"end\\\":\\\"25:00\\\"}\"\n}"
+				}
+			]
+		},
+		{
+			"name": "post schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user_id",
+						"value": "user7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"18:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://xuqg4pql26.execute-api.us-east-1.amazonaws.com/schedule",
+					"protocol": "https",
+					"host": [
+						"xuqg4pql26",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "409 - Schedule already exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:32:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfSeghwoAMEcFg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Schedule already exists\"\n}"
+				},
+				{
+					"name": "200 - OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:33:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfXyhJ5IAMEJDw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Schedule created successfully\",\n    \"data\": {\n        \"monday\": [\n            {\n                \"start\": \"09:30\",\n                \"end\": \"17:00\"\n            }\n        ],\n        \"tuesday\": [\n            {\n                \"start\": \"13:00\",\n                \"end\": \"17:00\"\n            }\n        ],\n        \"wednesday\": [],\n        \"thursday\": [],\n        \"friday\": [],\n        \"saturday\": [],\n        \"sunday\": []\n    }\n}"
+				},
+				{
+					"name": "400 - Invalid Start Date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"18:30\", \"end\": \"17:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:33:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfb-iLCIAMEckg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid time slot on monday: {\\\"start\\\":\\\"18:30\\\",\\\"end\\\":\\\"17:00\\\"}\"\n}"
+				},
+				{
+					"name": "400 - Invalid End Date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"25:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:34:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfjnhLxIAMEc9w="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid time slot on monday: {\\\"start\\\":\\\"09:30\\\",\\\"end\\\":\\\"25:00\\\"}\"\n}"
+				},
+				{
+					"name": "400 - No Timezone",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"25:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:34:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfnoiz2oAMEcVw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Timezone is required\"\n}"
+				},
+				{
+					"name": "400 - No Schedule",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:35:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajfsJg_soAMEcYg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Schedule is required\"\n}"
+				},
+				{
+					"name": "400 - Overlapping Timeslot",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "user5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timezone\": \"Africa/Lagos\",\n    \"schedule\": {\n          \"monday\": [{ \"start\": \"09:30\", \"end\": \"18:00\" }, { \"start\": \"09:30\", \"end\": \"19:00\" }],\n          \"tuesday\": [{ \"start\": \"13:00\", \"end\": \"17:00\" }],\n          \"wednesday\": [],\n          \"thursday\": [],\n          \"friday\": [],\n          \"saturday\": [],\n          \"sunday\": []\n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wvo4eryqxd.execute-api.us-east-1.amazonaws.com/schedule",
+							"protocol": "https",
+							"host": [
+								"wvo4eryqxd",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"schedule"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 Jul 2024 18:36:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "ajf1ph09IAMEJYg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Overlapping time slots on monday: {\\\"start\\\":\\\"09:30\\\",\\\"end\\\":\\\"18:00\\\"} and {\\\"start\\\":\\\"09:30\\\",\\\"end\\\":\\\"19:00\\\"}\"\n}"
+				}
+			]
+		}
+	]
+}

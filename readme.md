@@ -20,7 +20,7 @@ This project implements a Schedule Management API using AWS services, including 
 ### Components
 
 1. **API Gateway**: Provides REST-style endpoints to trigger Lambda functions.
-2. **Lambda Functions**: Handle schedule management, availability checking and processing queue messages.
+2. **Lambda Functions**: Handles schedule management, availability checking and processing queue messages.
 3. **Amazon Aurora PostgreSQL**: Stores user schedules.
 4. **SQS**: Used for handling background tasks and failed message processing.
 5. **S3**: Stores records of every mutation request payload.
@@ -58,7 +58,7 @@ All resources are defined using an Infrastructure-as-Code (IaC) solution known a
 }
 ```
 
-- **DLQ**: The DLQ implementation just logs the event. In a real life scenario, an appropriate action would be triggered.
+- **DLQ**: The DLQ implementation just logs the event to Cloudwatch. In a real life scenario, an appropriate action would be triggered.
 
 - **Users**: Three users - `user1`, `user2` and `user3` are added initially to the database. `user3` has been configured to throw an error which will be received in the DLQ.
 
@@ -115,4 +115,4 @@ A postman collection containing the endpoints as well as their sample responses 
 
 ## Demo Video
 
-A demo video showcasing the application can be found [here]().
+A demo video showcasing the application can be found [here](https://www.loom.com/share/7d16b55ea9404e838aeb144ec44ebff3).
