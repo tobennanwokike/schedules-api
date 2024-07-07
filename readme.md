@@ -15,6 +15,8 @@ This project implements a Schedule Management API using AWS services, including 
 
 ## Architecture
 
+![Architecture Diagram](./Schedule.png)
+
 ### Components
 
 1. **API Gateway**: Provides REST-style endpoints to trigger Lambda functions.
