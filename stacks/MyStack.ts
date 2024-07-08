@@ -1,6 +1,6 @@
-import { StackContext, Api, RDS, Queue, Bucket, Duration } from "sst/constructs";
+import { StackContext, Api, RDS, Queue, Bucket } from "sst/constructs";
 
-export function ScheduleStack({ stack }: StackContext) {
+export function ScheduleStack({ stack, app }: StackContext) {
 
   const bucket = new Bucket(stack, "Bucket");
 
@@ -45,12 +45,19 @@ export function ScheduleStack({ stack }: StackContext) {
   });
 
   const DATABASE = "SchedulesDB";
+  const prodConfig = {
+    autoPause: false,
+  };
+  const devConfig = {
+    autoPause: true,
+  };
 
   // Create the Aurora DB cluster
   const cluster = new RDS(stack, "Cluster", {
     engine: "postgresql13.9",
     defaultDatabaseName: DATABASE,
     migrations: "services/migrations",
+    scaling: app.stage === "prod" ? prodConfig : devConfig,
   });
 
   const api = new Api(stack, "Api", {
